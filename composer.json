@@ -1,0 +1,44 @@
+{
+    "name": "codicastudio/report-generator",
+    "description": "A noobs worthless garbage, just learning.",
+    "keywords": [
+        "worthless garabage by a noob."
+    ],
+    "homepage": "https://github.com/codicastudio/report-generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael J Brown",
+            "email": "codicastudiodev@gmail.com",
+            "homepage": "https://codicastudio.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.8",
+        "illuminate/support": ">=5.0",
+        "codicastudio/excel": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "codicastudio\\ReportGenerator\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "codicastudio\\ReportGenerator\\ServiceProvider"
+            ],
+            "aliases": {
+                "PdfReport": "codicastudio\\ReportGenerator\\Facades\\PdfReportFacade",
+                "ExcelReport": "codicastudio\\ReportGenerator\\Facades\\ExcelReportFacade",
+                "CSVReport": "codicastudio\\ReportGenerator\\Facades\\CSVReportFacade::class"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
